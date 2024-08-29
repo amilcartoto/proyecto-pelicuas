@@ -85,39 +85,43 @@ nav {
   
   /* Estilos para el contenedor de tarjetas */
   .card-container {
-    padding: auto;
-  } 
+    margin: auto;
+    background-color: #333;
+    
+  }
 
   #movies-container{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr)); /* Tres columnas de ancho mínimo 300px */
-    gap: 16px; /* Espacio entre las tarjetas */
-    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); /* Tres columnas de ancho mínimo 300px */
+    justify-items: center;
+    align-items: center;
+    gap: 5px; /* Espacio entre las tarjetas */
+    padding: 6px;
     background-color: #f9f9f9;
     border-radius: 8px;
   }
   
   
   .card {
-    background-color: rgb(255, 250, 250);
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 220;
+    width: 360px; /* Ancho de las tarjetas */
+    margin: 15px;
+    position: relative;
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    width: 18rem;
-    padding: 2rem;
+    border-radius: 8px; /* Bordes redondeados para un mejor efecto visual */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra para dar profundidad */
+    transition: transform 0.2s; /* Efecto de transición al hacer hover */
   }
   
   .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño de la tarjeta */
   }
   
-  .card img {
-    width: 100%;
-    height: auto;
+  .card-image {
     display: block;
-    transition: transform 0.5s ease;
+    width: 100%;
+    height: 200px; /* Aumenta la altura de la imagen para hacer la tarjeta más grande */
+    object-fit: cover; /* Cubre todo el contenedor de la imagen */
   }
   
   .card:hover img {
@@ -128,14 +132,26 @@ nav {
     padding: 1rem;
   }
   
-  .card-content h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.5rem;
+  .card-title {
+    position: absolute;
+  bottom: 10;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  text-align: center;
   }
   
-  .card-content p {
-    margin-bottom: 1rem;
-    color: #555;
+  .card-text {
+    position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px;
+  text-align: center;
   }
   
   .card-content button {
@@ -152,3 +168,8 @@ nav {
     background-color: #0056b3;
   }
   
+  .copy {
+    margin-left: 10px;
+    margin-top: auto;
+    border-top: #333;
+  }
